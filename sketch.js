@@ -60,15 +60,21 @@ document.body.removeChild(a);
 
 function imprimirTexto(){
     for(var i=0; i < generalDataBaseArray.length; i++){
-        console.log(generalDataBaseArray[i]);
+        console.log(generalDataBaseArray[i] + generalDataBaseErrorHistory[i]);
     }
 }
 
 function formatearDatos(){
-    bandera=prompt("¿ESTAS SEGURO?  SI / NO")
+    var bandera=prompt("¿ESTAS SEGURO?  SI / NO")
+    if(bandera.toUpperCase=="SI" || bandera.toUpperCase == "SÍ"){
     generalDataBaseBackUp = generalDataBaseArray;
     numeroTotalDeCuentasRegistradas = 0;
     generalDataBaseArray = null;
     texto = null;
     a = null;
+    
+}
+    else{
+        alert("Operación abortada.");
+    }
 }
